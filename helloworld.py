@@ -12,7 +12,7 @@ def build(app):
 
     c_label = toga.Label("Celsius", style=Pack(text_align=RIGHT))
     f_label = toga.Label("Fahrenheit", style=Pack(text_align=RIGHT))
-    join_label = toga.Label("is equivalent to", style=Pack(text_align=RIGHT))
+    join_label = toga.Label("is equivalent to", style=Pack(text_align=LEFT))
 
     def calculate(widget):
         try:
