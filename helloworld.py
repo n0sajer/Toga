@@ -5,16 +5,20 @@ from toga.style.pack import COLUMN, LEFT, RIGHT, ROW, Pack
 def build(app):
     c_box = toga.Box()
     f_box = toga.Box()
+    # button = toga.Button("Clear inputs", on_press=clear)
     box = toga.Box()
+
+    #def clear(widget):
         
+
     def calculateFahrenheight(widget):
         c_input.value = (float(f_input.value) - 32.0) * 5.0 / 9.0
 
     def calculateCelsius(widget):
         f_input.value = ((float(c_input.value)) * 9/ 5) + 32
 
-    c_input = toga.TextInput(on_lose_focus=calculateCelsius)
-    f_input = toga.TextInput(on_lose_focus=calculateFahrenheight)
+    c_input = toga.TextInput(on_confirm=calculateCelsius)
+    f_input = toga.TextInput(on_confirm=calculateFahrenheight)
 
     c_label = toga.Label("Celsius", style=Pack(text_align=RIGHT))
     f_label = toga.Label("Fahrenheigt", style=Pack(text_align=RIGHT))
@@ -37,7 +41,7 @@ def build(app):
 
     box.add(f_box)
     box.add(c_box)
-    # box.add(button)
+    #box.add(button)
 
     box.style.update(direction=COLUMN, padding=10)
     f_box.style.update(direction=ROW, padding=5)
